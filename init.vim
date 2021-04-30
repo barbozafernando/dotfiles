@@ -10,9 +10,13 @@ set nowrap
 set smartcase
 set noswapfile
 set nobackup
+set undodir=~/.vim/undodir
+set undofile
 set incsearch
 
-call plug#begin()
+# WINDOWS call plug#begin()
+
+call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
 Plug 'jremmen/vim-ripgrep'
