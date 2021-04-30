@@ -14,8 +14,7 @@ set undodir=~/.vim/undodir
 set undofile
 set incsearch
 
-" WINDOWS call plug#begin()
-
+" WINDOWS=call plug#begin()
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
@@ -54,6 +53,7 @@ nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>ss :Rg<SPACE>
 
+" nerdtree hotkeys
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
