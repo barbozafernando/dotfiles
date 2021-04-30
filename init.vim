@@ -14,7 +14,7 @@ set undodir=~/.vim/undodir
 set undofile
 set incsearch
 
-# WINDOWS call plug#begin()
+" WINDOWS call plug#begin()
 
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
