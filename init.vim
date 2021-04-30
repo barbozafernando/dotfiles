@@ -10,12 +10,11 @@ set nowrap
 set smartcase
 set noswapfile
 set nobackup
-set undodir=~/.vim/undodir
-set undofile
 set incsearch
 
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 Plug 'morhetz/gruvbox'
+Plug 'preservim/nerdtree'
 Plug 'jremmen/vim-ripgrep'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-fugitive'
@@ -25,8 +24,6 @@ Plug 'noahfrederick/vim-composer'
 Plug 'tpope/vim-projectionist'
 Plug 'stsewd/fzf-checkout.vim'
 Plug 'vim-airline/vim-airline'
-Plug 'git@github.com:kien/ctrlp.vim'
-Plug 'git@github.com:ycm-core/YouCompleteMe', {'do': './install.py --ts-completer'}
 Plug 'vim-scripts/vim-auto-save'
 call plug#end()
 
@@ -52,3 +49,8 @@ nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>ss :Rg<SPACE>
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
