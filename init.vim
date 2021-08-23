@@ -19,17 +19,16 @@ set relativenumber
 set hidden  
 
 call plug#begin()
-Plug 'morhetz/gruvbox'
-Plug 'noahfrederick/vim-laravel'
-Plug 'sheerun/vim-polyglot'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'terryma/vim-multiple-cursors'
+Plug 'morhetz/gruvbox'                              "NVIM theme
+Plug 'noahfrederick/vim-laravel'                    "Laravel snippets
+Plug 'sheerun/vim-polyglot'                         "pack of languages syntaxes and more 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } "fzf finder
+Plug 'junegunn/fzf.vim'                             "fzf finder
+Plug 'terryma/vim-multiple-cursors'                 "multiple string selection 
+Plug 'jiangmiao/auto-pairs'                         "pack of languages syntaxes and more (this must be after vim-go to work)
 call plug#end()
 
-"jiangmiao/auto-pairs - auto close brackets, parens etc..
-
-colorscheme gruvbox
+"jiangmiao/auto-pairs - colorscheme gruvbox
 set background=dark
 
 let mapleader = "\<space>"
