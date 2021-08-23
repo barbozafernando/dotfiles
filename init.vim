@@ -19,13 +19,14 @@ set relativenumber
 set hidden  
 
 call plug#begin()
-Plug 'morhetz/gruvbox'                              "NVIM theme
-Plug 'noahfrederick/vim-laravel'                    "Laravel snippets
-Plug 'sheerun/vim-polyglot'                         "pack of languages syntaxes and more 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } "fzf finder
-Plug 'junegunn/fzf.vim'                             "fzf finder
-Plug 'terryma/vim-multiple-cursors'                 "multiple string selection 
-Plug 'jiangmiao/auto-pairs'                         "auto close brackets, parent etc..
+Plug 'morhetz/gruvbox'                              " NVIM theme
+Plug 'noahfrederick/vim-laravel'                    " Laravel snippets
+Plug 'sheerun/vim-polyglot'                         " pack of languages syntaxes and more 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fzf finder
+Plug 'junegunn/fzf.vim'                             " fzf finder
+Plug 'terryma/vim-multiple-cursors'                 " multiple string selection 
+Plug 'jiangmiao/auto-pairs'                         " auto close brackets, parent etc..
+Plug 'tpope/vim-fugitive'                           " that git part u know...
 call plug#end()
 
 colorscheme gruvbox
