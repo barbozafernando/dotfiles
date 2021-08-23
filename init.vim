@@ -28,7 +28,7 @@ Plug 'terryma/vim-multiple-cursors'                 "multiple string selection
 Plug 'jiangmiao/auto-pairs'                         "pack of languages syntaxes and more (this must be after vim-go to work)
 call plug#end()
 
-"jiangmiao/auto-pairs - colorscheme gruvbox
+colorscheme gruvbox
 set background=dark
 
 let mapleader = "\<space>"
