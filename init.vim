@@ -27,6 +27,7 @@ Plug 'junegunn/fzf.vim'                             " fzf finder
 Plug 'terryma/vim-multiple-cursors'                 " multiple string selection 
 Plug 'jiangmiao/auto-pairs'                         " auto close brackets, parent etc..
 Plug 'tpope/vim-fugitive'                           " that git part u know...
+Plug 'vim-airline/vim-airline'                      " pretty little github tag on the left bottom
 call plug#end()
 
 colorscheme gruvbox
@@ -58,6 +59,11 @@ nnoremap <leader>v "+p<CR>
 "Switch between horizontal screens
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>l :wincmd l<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
 
 "Open list files on current directory
 nnoremap <c-p> :Files<CR>
+
+"Git commands
+nmap <leader>gs :G<CR>
