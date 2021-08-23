@@ -25,7 +25,7 @@ Plug 'sheerun/vim-polyglot'                         "pack of languages syntaxes 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } "fzf finder
 Plug 'junegunn/fzf.vim'                             "fzf finder
 Plug 'terryma/vim-multiple-cursors'                 "multiple string selection 
-Plug 'jiangmiao/auto-pairs'                         "pack of languages syntaxes and more (this must be after vim-go to work)
+Plug 'jiangmiao/auto-pairs'                         "pack of languages syntaxes and more
 call plug#end()
 
 colorscheme gruvbox
