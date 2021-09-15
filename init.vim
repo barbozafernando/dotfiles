@@ -28,6 +28,7 @@ Plug 'terryma/vim-multiple-cursors'                 " multiple string selection
 Plug 'jiangmiao/auto-pairs'                         " auto close brackets, parent etc..
 Plug 'tpope/vim-fugitive'                           " that git part u know...
 Plug 'vim-airline/vim-airline'                      " pretty little github tag on the left bottom
+Plug 'junegunn/vim-easy-align'                      " auto align
 call plug#end()
 
 colorscheme gruvbox
@@ -68,3 +69,10 @@ nmap <leader>gs :G<CR>
 "Escape button with fj instead pressing Esc
 inoremap fj <Esc>
 tnoremap fj <C-\><C-n>
+
+"Start interactive EasyAlign in visual mode (e.g. vipga)
+"Usage=select all the lines and type ga=
+xmap ga <Plug>(EasyAlign)
+
+"Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
