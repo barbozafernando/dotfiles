@@ -19,7 +19,7 @@ set relativenumber
 set hidden  
 
 call plug#begin()
-Plug 'morhetz/gruvbox'                              " NVIM theme
+Plug 'ntk148v/vim-horizon'                          " VIM theme
 Plug 'noahfrederick/vim-laravel'                    " Laravel snippets
 Plug 'sheerun/vim-polyglot'                         " pack of languages syntaxes and more 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fzf finder
@@ -31,8 +31,10 @@ Plug 'vim-airline/vim-airline'                      " pretty little github tag o
 Plug 'junegunn/vim-easy-align'                      " auto align
 call plug#end()
 
-colorscheme gruvbox
-set background=dark
+" if you don't set this option, this color might not correct
+set termguicolors
+colorscheme horizon
+let g:lightline = {'colorscheme' : 'horizon'}
 
 let mapleader = "\<space>"
 
@@ -45,11 +47,8 @@ else
   nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
 endif
 
-"Open new screen and goes back one directory level
-nnoremap <leader>re :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
-
 "Go back one directory level
-nnoremap <leader>e :Ex<CR>
+nnoremap <silent>sf :Ex<CR>
 
 "Enable ctrl+v from external files
 nnoremap <leader>v "+p<CR>
