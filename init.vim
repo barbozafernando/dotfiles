@@ -35,9 +35,6 @@ set background=dark
 
 let mapleader = "\<space>"
 
-"Adds ; at the end of a line
-nnoremap <leader>; A;<esc>
-
 "Open init.vim file
 if has('win32') || has('win64')
   nnoremap <leader>ev :vsplit ~\AppData\Local\nvim\init.vim<CR>
@@ -67,3 +64,7 @@ nnoremap <c-p> :Files<CR>
 
 "Git commands
 nmap <leader>gs :G<CR>
+
+"Escape button with fj instead pressing Esc
+inoremap fj <Esc>
+tnoremap fj <C-\><C-n>
