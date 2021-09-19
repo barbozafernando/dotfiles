@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "Installing git..."
 sudo apt-get update && sudo apt-get install git-all
