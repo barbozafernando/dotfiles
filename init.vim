@@ -11,6 +11,7 @@ set smartcase
 set noswapfile
 set nobackup
 set inccommand=split
+set colorcolumn=105
 
 "Row count relative to current cursor positioning
 set relativenumber
