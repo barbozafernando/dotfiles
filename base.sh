@@ -25,23 +25,23 @@ sudo apt-get install -y nodejs
 if [ -d ~/.config/nvim ]; then
   if [ ! -e ~/.config/nvim/init.vim ]; then
     echo "Downloading my init.vim file..."
-    curl -o ~/.config/nvim/init.vim https://raw.githubusercontent.com/barbozafernando/dotfiles/master/init.vim
+    curl -o ~/.config/nvim/init.vim https://raw.githubusercontent.com/barbozafernando/dotfiles/master/nvim/init.vim
   fi
 else
   mkdir ~/.config/nvim
   echo "Downloading my init.vim file..."
-  curl -o ~/.config/nvim/init.vim https://raw.githubusercontent.com/barbozafernando/dotfiles/master/init.vim
+  curl -o ~/.config/nvim/init.vim https://raw.githubusercontent.com/barbozafernando/dotfiles/master/nvim/init.vim
 fi
 
 if [ -d ~/.config/nvim/autoload ]; then
   if [ ! -e ~/.config/nvim/autoload/plug.vim ]; then
     echo "Downloading vim-plug for vim..."
-    curl -o ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    curl -o ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/barbozafernando/dotfiles/master/nvim/init.vim
   fi
 else
   mkdir ~/.config/nvim/autoload
   echo "Downloading vim-plug for vim..."
-  curl -o ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  curl -o ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/barbozafernando/dotfiles/master/nvim/init.vim
 fi
 
 # Didnt test it yet
