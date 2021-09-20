@@ -24,24 +24,25 @@ sudo apt-get install -y nodejs
 
 if [ -d ~/.config/nvim ]; then
   if [ ! -e ~/.config/nvim/init.vim ]; then
-    echo "Downloading my init.vim file..."
-    curl -o ~/.config/nvim/init.vim https://raw.githubusercontent.com/barbozafernando/dotfiles/master/nvim/init.vim
+    echo "Downloading my vim settings files..."
+    cd ~/.config/nvim
+    curl https://codeload.github.com/barbozafernando/dotfiles/tar.gz/master | \tar -xz --strip=2 dotfiles-master/nvim
   fi
 else
-  mkdir ~/.config/nvim
-  echo "Downloading my init.vim file..."
-  curl -o ~/.config/nvim/init.vim https://raw.githubusercontent.com/barbozafernando/dotfiles/master/nvim/init.vim
+  echo "Downloading my vim settings files..."
+  mkdir ~/.config/nvim && cd ~/.config/nvim
+  curl https://codeload.github.com/barbozafernando/dotfiles/tar.gz/master | \tar -xz --strip=2 dotfiles-master/nvim
 fi
 
 if [ -d ~/.config/nvim/autoload ]; then
   if [ ! -e ~/.config/nvim/autoload/plug.vim ]; then
     echo "Downloading vim-plug for vim..."
-    curl -o ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/barbozafernando/dotfiles/master/nvim/init.vim
+    curl -o ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   fi
 else
-  mkdir ~/.config/nvim/autoload
   echo "Downloading vim-plug for vim..."
-  curl -o ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/barbozafernando/dotfiles/master/nvim/init.vim
+  mkdir ~/.config/nvim/autoload
+  curl -o ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
 # Didnt test it yet
