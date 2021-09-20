@@ -30,7 +30,8 @@ if [ -d ~/.config/nvim ]; then
   fi
 else
   echo "Downloading my vim settings files..."
-  mkdir ~/.config/nvim && cd ~/.config/nvim
+  mkdir ~/.config/nvim
+  cd ~/.config/nvim
   curl https://codeload.github.com/barbozafernando/dotfiles/tar.gz/master | \tar -xz --strip=2 dotfiles-master/nvim
 fi
 
