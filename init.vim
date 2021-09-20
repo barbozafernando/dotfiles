@@ -20,16 +20,17 @@ set relativenumber
 set hidden  
 
 call plug#begin()
-Plug 'ntk148v/vim-horizon'                          " VIM theme
-Plug 'noahfrederick/vim-laravel'                    " Laravel snippets
-Plug 'sheerun/vim-polyglot'                         " pack of languages syntaxes and more 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fzf finder
-Plug 'junegunn/fzf.vim'                             " fzf finder
-Plug 'terryma/vim-multiple-cursors'                 " multiple string selection 
-Plug 'jiangmiao/auto-pairs'                         " auto close brackets, parent etc..
-Plug 'tpope/vim-fugitive'                           " that git part u know...
-Plug 'vim-airline/vim-airline'                      " pretty little github tag on the left bottom
-Plug 'junegunn/vim-easy-align'                      " auto align
+Plug 'ntk148v/vim-horizon'                              " VIM theme
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' } " Auto-complete
+Plug 'noahfrederick/vim-laravel'                        " Laravel snippets
+Plug 'sheerun/vim-polyglot'                             " pack of languages syntaxes and more 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }     " fzf finder
+Plug 'junegunn/fzf.vim'                                 " fzf finder
+Plug 'terryma/vim-multiple-cursors'                     " multiple string selection 
+Plug 'jiangmiao/auto-pairs'                             " auto close brackets, parent etc..
+Plug 'tpope/vim-fugitive'                               " that git part u know...
+Plug 'vim-airline/vim-airline'                          " pretty little github tag on the left bottom
+Plug 'junegunn/vim-easy-align'                          " auto align
 call plug#end()
 
 " if you don't set this option, this color might not correct
@@ -76,3 +77,16 @@ xmap ga <Plug>(EasyAlign)
 
 "Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+"YouCompleteMe settings
+let g:ycm_semantic_triggers =  {
+  \   'c': ['->', '.'],
+  \   'ocaml': ['.', '#'],
+  \   'cpp,cuda,objcpp': ['->', '.', '::'],
+  \   'perl': ['->'],
+  \   'php': ['->', '::'],
+  \   'cs,d,elixir,go,groovy,java,javascript,julia,perl6,python,scala,typescript,vb': ['.'],
+  \   'ruby,rust': ['.', '::'],
+  \   'lua': ['.', ':'],
+  \   'erlang': [':'],
+  \ }
