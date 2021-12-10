@@ -34,7 +34,6 @@ nmap ga <Plug>(EasyAlign)
 " vim-multiple-cursor mappings
 let g:multi_cursor_use_default_mapping=0
 
-" Default mapping
 let g:multi_cursor_start_word_key      = '<C-n>'
 let g:multi_cursor_select_all_word_key = '<A-n>'
 let g:multi_cursor_start_key           = 'g<C-n>'
