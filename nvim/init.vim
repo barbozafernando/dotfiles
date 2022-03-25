@@ -12,29 +12,20 @@ set noswapfile
 set nobackup
 set inccommand=split
 set colorcolumn=105
-
-"Row count relative to current cursor positioning
 set relativenumber
-
-"Allows me to open another file without needing to save it first
 set hidden  
 
 call plug#begin()
-Plug 'ntk148v/vim-horizon'                                " VIM theme
-Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' } " File explorer
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'                      " fuzzy finder
 Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }   " Auto complete
-Plug 'terryma/vim-multiple-cursors'                       " multiple string selection 
-Plug 'kristijanhusak/defx-icons'
 Plug 'jiangmiao/auto-pairs'                               " auto close brackets, parent etc..
 Plug 'tpope/vim-fugitive'                                 " that git part u know...
 Plug 'vim-airline/vim-airline'                            " pretty little github tag on the left bottom
 Plug 'junegunn/vim-easy-align'                            " auto align
 call plug#end()
 
-" if you don't set this option, this color might not correct
 set termguicolors
-colorscheme horizon
-let g:lightline = {'colorscheme' : 'horizon'}
 
 "Open init.vim file
 if has('win32') || has('win64')
@@ -45,8 +36,8 @@ else
   nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
 endif
 
-runtime ./defx.vim
 runtime ./keymaps.vim
+runtime ./telescope.rc.vim
 
 let g:ycm_semantic_triggers =  {
   \   'c': ['->', '.'],
