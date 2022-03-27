@@ -15,7 +15,7 @@ set colorcolumn=105
 set relativenumber
 set hidden  
 
-call plug#begin()
+call plug#begin('~/.config/nvim/plugged')
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'                      " fuzzy finder
 Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }   " Auto complete
