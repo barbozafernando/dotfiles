@@ -26,6 +26,8 @@ Plug 'junegunn/vim-easy-align'                            " auto align
 call plug#end()
 
 set termguicolors
+set guifont=Consolas\ 12
+set guicursor=i:block
 
 "Open init.vim file
 if has('win32') || has('win64')
