@@ -26,27 +26,8 @@ sudo apt update &&
 curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
-echo "Downloading my vim settings files..."
-if [ -d ~/.config/nvim ]; then
-  if [ ! -e ~/.config/nvim/init.vim ]; then
-    cd ~/.config/nvim
-    curl https://codeload.github.com/barbozafernando/dotfiles/tar.gz/master | \tar -xz --strip=2 dotfiles-master/nvim
-  fi
-else
-  mkdir ~/.config/nvim
-  cd ~/.config/nvim &&
-  curl https://codeload.github.com/barbozafernando/dotfiles/tar.gz/master | \tar -xz --strip=2 dotfiles-master/nvim
-fi
-
-echo "Downloading vim-plug for vim..."
-if [ -d ~/.config/nvim/autoload ]; then
-  if [ ! -e ~/.config/nvim/autoload/plug.vim ]; then
-    curl -o ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  fi
-else
-  mkdir ~/.config/nvim/autoload &&
-  curl -o ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-fi
+import_vim_settings
+import_vim_plug
 
 echo "Installing brave browser..."
 sudo apt install apt-transport-https &&
@@ -54,4 +35,38 @@ sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://b
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 sudo apt update &&
 sudo apt install brave-browser
+
+function import_vim_settings {
+	echo "Importing vim settings..."
+	if [ ! -d ~/.config ]; then
+		mkdir ~/.config && mkdir ~/.config/nvim && cd ~/.config/nvim
+		curl https://codeload.github.com/barbozafernando/dotfiles/tar.gz/master | \tar -xz --strip=2 dotfiles-master/nvim
+		echo "Vim settings imported successfully."
+		return;
+	fi
+
+	if [ ! -d ~/.config/nvim ]; then
+		mkdir ~/.config/nvim && cd ~/.config/nvim
+		curl https://codeload.github.com/barbozafernando/dotfiles/tar.gz/master | \tar -xz --strip=2 dotfiles-master/nvim
+		echo "Vim settings imported successfully."
+		return;
+	fi
+
+	cd ~/.config/nvim && curl https://codeload.github.com/barbozafernando/dotfiles/tar.gz/master | \tar -xz --strip=2 dotfiles-master/nvim
+	echo "Vim settings imported successfully."
+}
+
+function import_vim_plug {
+	echo "Importing vim plug..."
+	if [ ! -d ~/.config/nvim/autoload ]; then
+		mkdir ~/.config/nvim/autoload
+	fi
+
+	if [ ! -e ~/.config/nvim/autoload/plug.vim ]; then
+		curl -o ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+		echo "Vim plug imported successfully."
+	fi
+
+	echo "Vim plug is already imported."
+}
 
