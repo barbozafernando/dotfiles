@@ -57,15 +57,15 @@ import_vim_settings
 import_vim_plug
 
 function import_vim_settings {
-	if [ ! -d ~/.config ]; then
-		mkdir ~/.config
-	fi
+  if [ ! -d ~/.config ]; then
+    mkdir ~/.config
+  fi
 
-	if [ ! -d ~/.config/nvim ]; then
-		mkdir ~/.config/nvim
-	fi
+  if [ ! -d ~/.config/nvim ]; then
+    mkdir ~/.config/nvim
+  fi
 
-	cd ~/.config/nvim && curl https://codeload.github.com/barbozafernando/dotfiles/tar.gz/master | \tar -xz --strip=2 dotfiles-master/nvim
+  cd ~/.config/nvim && curl https://codeload.github.com/barbozafernando/dotfiles/tar.gz/master | \tar -xz --strip=2 dotfiles-master/nvim
 
   if [ $? -eq 0 ]; then
     echo "Vim settings imported successfully." >> $LOG_FILE
@@ -75,15 +75,15 @@ function import_vim_settings {
 }
 
 function import_vim_plug {
-	if [ ! -d ~/.config/nvim/autoload ]; then
-		mkdir ~/.config/nvim/autoload
-	fi
+  if [ ! -d ~/.config/nvim/autoload ]; then
+    mkdir ~/.config/nvim/autoload
+  fi
 
-	if [ -e ~/.config/nvim/autoload/plug.vim ]; then
+  if [ -e ~/.config/nvim/autoload/plug.vim ]; then
     return
-	fi
+  fi
 
-	curl -o ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  curl -o ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   if [ $? -eq 0 ]; then
     echo "Vim plug was imported successfully." >> $LOG_FILE
   else
