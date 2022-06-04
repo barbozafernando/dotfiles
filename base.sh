@@ -4,7 +4,7 @@
 # python3 install.py --js-completer --ts-completer
 # to install semantic completion to js/ts
 
-LOG_FILE=$PWD/base.txt
+LOG_FILE=base.txt
 
 sudo apt-get update && sudo apt-get install git-all -y
 if [ $? -eq 0 ]; then
