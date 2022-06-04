@@ -4,7 +4,7 @@
 # python3 install.py --js-completer --ts-completer
 # to install semantic completion to js/ts
 
-LOG_FILE=base.txt
+LOG_FILE=$PWD/base.txt
 
 sudo apt-get update && sudo apt-get install git-all -y
 if [ $? -eq 0 ]; then
@@ -21,7 +21,7 @@ else
 fi
 
 sudo add-apt-repository ppa:neovim-ppa/stable
-sudo apt-get update && sudo apt-get install neovim
+sudo apt-get update && sudo apt-get install neovim -y
 if [ $? -eq 0 ]; then
    echo "NVIM installed..." >> $LOG_FILE
 else
@@ -43,18 +43,6 @@ else
    echo "Fail to install node..." >> $LOG_FILE
 fi
 
-sudo apt install apt-transport-https &&
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-sudo apt update && sudo apt install brave-browser
-if [ $? -eq 0 ]; then
-   echo "Brave installed..." >> $LOG_FILE
-else
-   echo "Fail to install brave..." >> $LOG_FILE
-fi
-
-import_vim_settings
-import_vim_plug
 
 function import_vim_settings {
   if [ ! -d ~/.config ]; then
@@ -91,3 +79,32 @@ function import_vim_plug {
   fi
 }
 
+function is_running_on_wsl {
+  uname -a | grep -i wsl
+
+  if [ $? -eq 0 ]; then
+    echo "platform=WSL" >> $LOG_FILE
+  else
+    echo "platform=NOT_WSL" >> $LOG_FILE
+  fi
+}
+
+function install_browser {
+  is_running_on_wsl
+
+  if [ $? -eq 1 ]; then
+    sudo apt install apt-transport-https &&
+    sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+    echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+    sudo apt update && sudo apt install brave-browser -y
+    if [ $? -eq 0 ]; then
+       echo "Brave installed..." >> $LOG_FILE
+    else
+       echo "Fail to install brave..." >> $LOG_FILE
+    fi
+  fi
+}
+
+import_vim_settings
+import_vim_plug
+install_browser
