@@ -43,6 +43,7 @@ else
    echo "Fail to install node..." >> $LOG_FILE
 fi
 
+sudo apt-get update && sudo apt-get install build-essential -y
 
 function import_vim_settings {
   if [ ! -d ~/.config ]; then
