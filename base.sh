@@ -109,3 +109,23 @@ function install_browser {
 import_vim_settings
 import_vim_plug
 install_browser
+
+sudo apt update && sudo apt install zsh -y
+if [ $? -eq 0 ]; then
+   echo "zsh installed..." >> $LOG_FILE
+   chsh -s $(which zsh)
+   if [ $? -eq 0 ]; then
+      echo "set zsh as default shell..." >> $LOG_FILE
+   else
+      echo "Fail to set zsh as default shell..." >> $LOG_FILE
+   fi
+else
+   echo "Fail to install zsh..." >> $LOG_FILE
+fi
+
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+if [ $? -eq 0 ]; then
+   echo "Oh My Zsh installed..." >> $LOG_FILE
+else
+   echo "Fail to install Oh My Zsh..." >> $LOG_FILE
+fi
