@@ -107,7 +107,7 @@ source $ZSH/oh-my-zsh.sh
 alias d="docker-compose"
 alias gst="git status"
 alias gad="git add"
-alias gco="git commit"
+alias gco="git commit -m"
 alias gck="git checkout"
 alias gps="git push origin"
 alias glo="git log --oneline"
