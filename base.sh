@@ -129,3 +129,5 @@ if [ $? -eq 0 ]; then
 else
    echo "Fail to install Oh My Zsh..." >> $LOG_FILE
 fi
+
+sudo apt update && sudo apt-get install ripgrep -y
