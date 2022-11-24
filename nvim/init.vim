@@ -16,18 +16,34 @@ set relativenumber
 set hidden  
 
 call plug#begin('~/.config/nvim/plugged')
+
+" plugin dependency
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'                      " fuzzy finder
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }   " Auto complete
-Plug 'jiangmiao/auto-pairs'                               " auto close brackets, parent etc..
-Plug 'tpope/vim-fugitive'                                 " that git part u know...
-Plug 'vim-airline/vim-airline'                            " pretty little github tag on the left bottom
-Plug 'junegunn/vim-easy-align'                            " auto align
+
+" fuzzy finder
+Plug 'nvim-telescope/telescope.nvim'
+
+" Auto completation
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
+
+" that git part u know...
+Plug 'tpope/vim-fugitive'
+
+" Github Left Bottom Tag 
+Plug 'vim-airline/vim-airline'
+
+" Auto align
+Plug 'junegunn/vim-easy-align'
+Plug 'ThePrimeagen/harpoon'
+Plug 'jiangmiao/auto-pairs'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 set termguicolors
 set guifont=Consolas\ 12
 set guicursor=i:block
+
+colorscheme gruvbox
 
 "Open init.vim file
 if has('win32') || has('win64')
@@ -40,8 +56,11 @@ endif
 
 runtime ./keymaps.vim
 runtime ./telescope.rc.vim
+runtime ./harpoon.vim
 
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_update_diagnostics_in_insert_mode = 0
+let g:ycm_echo_current_diagnostic = 'virtual-text'
 let g:ycm_semantic_triggers =  {
   \   'c': ['->', '.'],
   \   'ocaml': ['.', '#'],
@@ -53,3 +72,4 @@ let g:ycm_semantic_triggers =  {
   \   'lua': ['.', ':'],
   \   'erlang': [':'],
   \ }
+
