@@ -5,9 +5,6 @@ let mapleader = "\<space>"
 "Go back one directory level
 nnoremap <silent>sf :Ex<CR>
 
-"Enable ctrl+v from external files
-nnoremap <leader>v "+p<CR>
-
 "Switch between vim panels
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>l :wincmd l<CR>
