@@ -58,9 +58,9 @@ runtime ./keymaps.vim
 runtime ./telescope.rc.vim
 runtime ./harpoon.vim
 
+let g:ycm_echo_current_diagnostic = 'virtual-text'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_update_diagnostics_in_insert_mode = 0
-let g:ycm_echo_current_diagnostic = 'virtual-text'
 let g:ycm_semantic_triggers =  {
   \   'c': ['->', '.'],
   \   'ocaml': ['.', '#'],
