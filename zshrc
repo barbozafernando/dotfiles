@@ -104,11 +104,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Aliases
-alias d="docker-compose"
+alias d="docker"
+alias dc="docker-compose"
 alias gst="git status"
 alias gad="git add"
 alias gco="git commit -m"
 alias gck="git checkout"
 alias gps="git push origin"
 alias glo="git log --oneline"
-
