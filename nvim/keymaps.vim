@@ -1,6 +1,6 @@
 " Description: Keymaps
 
-let mapleader = "\<space>"
+let mapleader = " "
 
 "Go back one directory level
 nnoremap <silent>sf :Ex<CR>
