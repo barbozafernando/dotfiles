@@ -16,7 +16,6 @@ set relativenumber
 set hidden  
 
 call plug#begin('~/.config/nvim/plugged')
-
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
