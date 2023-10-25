@@ -17,22 +17,11 @@ set hidden
 
 call plug#begin('~/.config/nvim/plugged')
 
-" plugin dependency
 Plug 'nvim-lua/plenary.nvim'
-
-" fuzzy finder
 Plug 'nvim-telescope/telescope.nvim'
-
-" Auto completation
 Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
-
-" that git part u know...
 Plug 'tpope/vim-fugitive'
-
-" Github Left Bottom Tag 
 Plug 'vim-airline/vim-airline'
-
-" Auto align
 Plug 'junegunn/vim-easy-align'
 Plug 'ThePrimeagen/harpoon'
 Plug 'jiangmiao/auto-pairs'
@@ -44,15 +33,6 @@ set guifont=Consolas\ 12
 set guicursor=i:block
 
 colorscheme gruvbox
-
-"Open init.vim file
-if has('win32') || has('win64')
-  nnoremap <leader>ev :vsplit ~\AppData\Local\nvim\init.vim<CR>
-  nnoremap <leader>sv :source ~\AppData\Local\nvim\init.vim<CR>
-else
-  nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<CR>
-  nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
-endif
 
 runtime ./keymaps.vim
 runtime ./telescope.rc.vim
@@ -72,4 +52,3 @@ let g:ycm_semantic_triggers =  {
   \   'lua': ['.', ':'],
   \   'erlang': [':'],
   \ }
-
