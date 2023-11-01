@@ -17,6 +17,9 @@ nnoremap <silent><leader>gd :YcmCompleter GoTo<CR>
 "Git commands
 nmap <leader>gs :G<CR>
 
+"Replace selected
+xnoremap <leader>s '"zy<Esc>:%s/<C-R>z//g<Left><Left>
+
 "Escape button with fj instead pressing Esc
 inoremap fj <Esc>
 tnoremap fj <C-\><C-n>
