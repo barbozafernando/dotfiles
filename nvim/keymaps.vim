@@ -18,7 +18,9 @@ nnoremap <silent><leader>gd :YcmCompleter GoTo<CR>
 nmap <leader>gs :G<CR>
 
 "Replace selected
-xnoremap <C-r> '"zy<Esc>:%s/<C-R>z//g<Left><Left><Left>
+"xnoremap <C-r> '"zy<Esc>:%s/<C-R>z//g<Left><Left><Left>
+
+nnoremap <leader>n :terminal <Space>
 
 "Escape button with fj instead pressing Esc
 inoremap fj <Esc>
