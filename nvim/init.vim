@@ -44,7 +44,7 @@ runtime ./harpoon.vim
 
 lua << EOF
 require("nvim-treesitter.configs").setup({
-    ensure_installed = { "javascript", "typescript", "json", "html", "tsx" },
+    ensure_installed = { "vim", "c", "javascript", "typescript", "json", "go", "rust", "tsx" },
     sync_install = false,
     auto_install = true,
     highlight = {
