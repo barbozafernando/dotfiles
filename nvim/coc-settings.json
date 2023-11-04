@@ -1,4 +1,5 @@
 {
   "coc.preferences.formatOnSave": true,
-  "coc.preferences.formatOnSaveTimeout": 500
+  "coc.preferences.formatOnSaveTimeout": 500,
+  "inlayHint.enable": false
 }
