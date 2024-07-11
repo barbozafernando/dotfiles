@@ -21,7 +21,8 @@ require('telescope').setup{
         -- e.g. git_{create, delete, ...}_branch for the git_branches picker
         ["<esc>"] = actions.close,
         ["<C-j>"] = actions.move_selection_next,
-        ["<C-k>"] = actions.move_selection_previous,}
+        ["<C-k>"] = actions.move_selection_previous,
+      }
     }
   },
 }
