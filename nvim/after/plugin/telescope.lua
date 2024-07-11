@@ -21,7 +21,8 @@ require('telescope').setup{
       "android",
       "fastlane",
       "ios",
-      "__mocks__"
+      "__mocks__",
+      "plop-templates",
     },
     mappings = {
       i = {
